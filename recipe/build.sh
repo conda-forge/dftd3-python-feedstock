@@ -17,5 +17,8 @@ pushd _build
 
 meson "${meson_options[@]}"
 
-ninja install
+ninja
+cp dftd3/_libdftd3.*.so ../dftd3
 popd
+
+"$PYTHON" -m pip install . --no-deps -vvv
