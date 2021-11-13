@@ -10,7 +10,7 @@ source:
   sha256: 5133b6f4835d595836a28d1c96974ccd713d7b238597d6f82da1f32a4a898afd
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or (osx and (python_impl == 'cpython' and py<38))]
 
 requirements:
