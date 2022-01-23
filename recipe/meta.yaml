@@ -1,5 +1,5 @@
 {% set name = "dftd3-python" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/awvwgk/simple-dftd3/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 47b2614c911085690075dda5af70391c93d9a43fe067eae15bb6db72eac33aab
+  sha256: 3d775608bf85cd389385a84ea5586ede57215ff9cff646480552ca835a9de9ca
   patches:
     - python-version.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [osx and (python_impl == 'cpython' and py<38)]
   skip: true  # [(not x86_64 and linux) and (python_impl == 'cpython' and py==39)]
   script:
