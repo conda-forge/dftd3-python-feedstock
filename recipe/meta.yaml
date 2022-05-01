@@ -15,8 +15,11 @@ build:
   script:
     - set -ex  # [unix]
     - cd python
-    - meson setup _build ${MESON_ARGS:---prefix=${PREFIX} --libdir=lib} --buildtype=release -Dpython_version=${PYTHON}  # [unix]
-    - meson setup _build --prefix=%PREFIX% --buildtype=release --pkg-config-path=%PREFIX%\lib\pkgconfig -Dpython_version=%PYTHON%  # [win]
+    - >
+       meson setup _build
+       ${MESON_ARGS:---prefix=${PREFIX} --libdir=lib}  # [unix]
+       --prefix=%PREFIX% --pkg-config-path=%LIBRARY_PREFIX%\lib\pkgconfig;%PREFIX%\lib\pkgconfig  # [win]
+       --buildtype=release -Dpython_version={{ PYTHON }}
     - meson compile -C _build
     - meson install -C _build --no-rebuild
     - copy %SRC_DIR%\assets\parameters.toml %PREFIX%\lib\site-packages\dftd3  # [win]
@@ -32,13 +35,12 @@ requirements:
     - python
     - cffi
     - pip
-    - simple-dftd3
+    - simple-dftd3 >={{ version }}
     - libblas  # [unix]
   run:
     - python
     - cffi
     - numpy
-    - simple-dftd3
 
 
 test:
@@ -47,6 +49,7 @@ test:
     - dftd3.library
     - dftd3.interface
     - dftd3.parameters
+    - dftd3.ase
     - dftd3.qcschema
   requires:
     - pytest
