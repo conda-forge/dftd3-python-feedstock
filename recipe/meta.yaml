@@ -1,16 +1,16 @@
 {% set name = "dftd3-python" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/awvwgk/simple-dftd3/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4bef311f8e5a2c32141eddeea65615c3c8480f917cd884488ede059fb0962a50
+  url: https://github.com/dftd3/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 19400a176eb4dcee7b89181a5a5f0033fe6b05c52821e54896a98448761d003a
 
 build:
-  number: 2
+  number: 0
   skip: true  # [osx and (python_impl == 'cpython' and py<38)]
   script:
     - set -ex  # [unix]
