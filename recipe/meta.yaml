@@ -22,7 +22,7 @@ requirements:
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - meson                               # [build_platform != target_platform]
     - meson-python                        # [build_platform != target_platform]
-    - pkg-config                          # [build_platform != target_platform]
+    - pkg-config
     - python                              # [build_platform != target_platform]
     - python-build                        # [build_platform != target_platform]
   host:
@@ -30,7 +30,6 @@ requirements:
     - libblas  # [unix]
     - meson
     - meson-python
-    - pkg-config
     - pip
     - python
     - python-build
