@@ -10,7 +10,6 @@ EOF
 mv python/mesonpep517.toml python/pyproject.toml
 
 ${PYTHON} -m build \
-   -Csetup-args="--buildtype=release" \
    -Csetup-args="--warnlevel=0" \
    -Csetup-args="--cross-file=pkgconfig.ini" \
    --outdir . \
