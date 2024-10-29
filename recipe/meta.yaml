@@ -1,5 +1,5 @@
 {% set name = "dftd3-python" %}
-{% set version = "1.1.1" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dftd3/simple-dftd3/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: fde5e1bdac41c38692bfdb6abcad66fb9ccfe6e990a8d4cf54f44e7188d49b5a
+  sha256: 20adc61ed606e71227a78308a9ddca34d822d46117e6311ed51a00df16b2eabc
 
 build:
   number: 0
