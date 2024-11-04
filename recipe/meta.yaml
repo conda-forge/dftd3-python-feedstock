@@ -10,14 +10,14 @@ source:
   sha256: 20adc61ed606e71227a78308a9ddca34d822d46117e6311ed51a00df16b2eabc
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}  # [unix]
     - {{ compiler('m2w64_c') }}  # [win]
-    - {{ stdlib('c') }}
+    - {{ stdlib('c') }}  # [unix]
+    - {{ stdlib('m2w64_c') }}  # [win]
     - cffi                                # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - meson                               # [build_platform != target_platform]
@@ -27,7 +27,6 @@ requirements:
     - python-build                        # [build_platform != target_platform]
   host:
     - cffi
-    - libblas  # [unix]
     - meson
     - meson-python
     - pip
