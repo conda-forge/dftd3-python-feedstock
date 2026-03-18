@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/dftd3/simple-dftd3/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3a12c04c490badc63054aca18ea7670d416fcc2152cfe9b8af220da57c39f942
+  url: https://github.com/loriab/simple-dftd3/archive/qcsk_v2_adapt.tar.gz
+  sha256: 559e7fd6a2d9db1c3e9b633d17ab2618b8597041862534e7697640da2b6e9d78
 
 build:
   number: 1
@@ -48,11 +48,11 @@ test:
     - dftd3.interface
     - dftd3.parameters
     - dftd3.ase
-    - dftd3.qcschema  # [py<313]
+    - dftd3.qcschema
   requires:
     - pytest
     - setuptools
-    - qcelemental  # [py<313]
+    - qcelemental >=0.50.0rc3
     - ase
     - tomli
 
