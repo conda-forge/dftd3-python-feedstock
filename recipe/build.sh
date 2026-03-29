@@ -16,8 +16,6 @@ if [ -f ${BUILD_PREFIX}/meson_cross_file.txt ]; then
   build_args=("${build_args[@]}" "-Csetup-args=--cross-file=${BUILD_PREFIX}/meson_cross_file.txt")
 fi
 
-mv python/mesonpep517.toml python/pyproject.toml
-
 ${PYTHON} -m build \
     "${build_args[@]}" \
     --outdir . \

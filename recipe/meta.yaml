@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/dftd3/simple-dftd3/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3a12c04c490badc63054aca18ea7670d416fcc2152cfe9b8af220da57c39f942
+  url: https://github.com/dftd3/simple-dftd3/archive/main.tar.gz
+  sha256: 74571b6f6b9c80ecbd14d7584104e3c8460a648ee111a0bc87323b47d75c440a
 
 build:
   number: 1
@@ -39,7 +39,8 @@ requirements:
     - cffi
     - numpy
     - python
-
+  run_constrained:
+    - qcelemental >=0.50.0rc3             # [py == 314]
 
 test:
   imports:
@@ -48,13 +49,15 @@ test:
     - dftd3.interface
     - dftd3.parameters
     - dftd3.ase
-    - dftd3.qcschema  # [py<313]
+    - dftd3.qcschema
   requires:
     - pytest
     - setuptools
-    - qcelemental  # [py<313]
+    - qcelemental >=0.50.0rc3
     - ase
     - tomli
+  commands:
+    - pytest --pyargs dftd3 -vv
 
 about:
   home: https://github.com/awvwgk/simple-dftd3/tree/main/python
