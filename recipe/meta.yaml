@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/loriab/simple-dftd3/archive/qcsk_v2_adapt.tar.gz
-  sha256: 559e7fd6a2d9db1c3e9b633d17ab2618b8597041862534e7697640da2b6e9d78
+  url: https://github.com/dftd3/simple-dftd3/archive/main.tar.gz
+  sha256: 74571b6f6b9c80ecbd14d7584104e3c8460a648ee111a0bc87323b47d75c440a
 
 build:
   number: 1
@@ -39,7 +39,8 @@ requirements:
     - cffi
     - numpy
     - python
-
+  run_constrained:
+    - qcelemental >=0.50.0rc3             # [py == 314]
 
 test:
   imports:
@@ -55,6 +56,8 @@ test:
     - qcelemental >=0.50.0rc3
     - ase
     - tomli
+  commands:
+    - pytest --pyargs dftd3 -vv
 
 about:
   home: https://github.com/awvwgk/simple-dftd3/tree/main/python
