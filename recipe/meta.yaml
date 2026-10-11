@@ -10,7 +10,7 @@ source:
   sha256: 534919ebc44bb59de323513f41d1c1fba5f457008323d2e67087351a76c8fd9f
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -48,13 +48,15 @@ test:
     - dftd3.interface
     - dftd3.parameters
     - dftd3.ase
-    - dftd3.qcschema  # [py<313]
+    - dftd3.qcschema
   requires:
     - pytest
     - setuptools
-    - qcelemental  # [py<313]
+    - qcelemental
     - ase
     - tomli
+  commands:
+    - python -c "from dftd3.parameters import get_all_damping_params as f; p=f(data_file='assets/parameters.toml'); print(len(p), 'e.g.', sorted(p)[:3])"
 
 about:
   home: https://github.com/awvwgk/simple-dftd3/tree/main/python
