@@ -56,7 +56,7 @@ test:
     - ase
     - tomli
   commands:
-    - python -c "from dftd3.parameters import get_all_damping_params as f; p=f(data_file='assets/parameters.toml'); print(len(p), 'e.g.', sorted(p)[:3])"
+    - python -c "from dftd3.parameters import get_all_damping_params as f; p=f(); print(len(p), 'e.g.', sorted(p)[:3])"
 
 about:
   home: https://github.com/awvwgk/simple-dftd3/tree/main/python
