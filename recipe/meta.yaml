@@ -35,7 +35,7 @@ requirements:
     - python
     - python-build
     - setuptools
-    #- simple-dftd3 >={{ version }}
+    - simple-dftd3 >={{ version }}
   run:
     - cffi
     - numpy
