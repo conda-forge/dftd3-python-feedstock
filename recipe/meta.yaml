@@ -8,6 +8,7 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/dftd3/dftd3-{{ version }}.tar.gz
   sha256: 189e5c20b27de8e674eb241de76d7a64902b80b550629d419297a000bfe3a19b
+  folder: python
 
 build:
   number: 3
