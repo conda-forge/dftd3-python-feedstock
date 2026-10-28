@@ -1,17 +1,17 @@
 {% set name = "dftd3-python" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/dftd3/dftd3-{{ version }}.tar.gz
-  sha256: 189e5c20b27de8e674eb241de76d7a64902b80b550629d419297a000bfe3a19b
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/dftd3/dftd3-{{ version }}.tar.gz
+  sha256: 42844f1c0ba553a42b0921313b5f8d1b8877a5bee0c8419f1b73452db914d1a3
   folder: python
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:
